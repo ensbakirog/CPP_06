@@ -1,0 +1,2 @@
+GET https://api.kocaeli.edu.tr/api/Announcement/GetAll?TranslationCode=0
+code: 1051
