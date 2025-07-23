@@ -1,11 +1,11 @@
-NAME		:= Serialization
+NAME		:= Identify
 
 CPPFLAGS	:= -Wall -Wextra -Werror -std=c++98
 
 CXX			:= c++
 RM			:= rm -rf
 
-SRC			:= main.cpp Serializer.cpp
+SRC			:= Base.cpp main.cpp
 OBJ			:= $(SRC:.cpp=.o)
 
 all: $(NAME)
