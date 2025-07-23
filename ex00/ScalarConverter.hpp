@@ -3,6 +3,8 @@
 
 	#include <string>
 
+	#define ARG_ERR "Error: ./program <arg>"
+
 	class ScalarConverter
 	{
 		private:

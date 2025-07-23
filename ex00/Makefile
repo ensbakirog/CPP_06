@@ -5,7 +5,7 @@ CPPFLAGS	:= -Wall -Wextra -Werror -std=c++98
 CXX			:= c++
 RM			:= rm -rf
 
-SRC			:= ScalarConverter.cpp
+SRC			:= ScalarConverter.cpp main.cpp
 OBJ			:= $(SRC:.cpp=.o)
 
 all: $(NAME)
