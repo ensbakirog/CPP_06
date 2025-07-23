@@ -1,4 +1,4 @@
-NAME		:= program
+NAME		:= convert
 
 CPPFLAGS	:= -Wall -Wextra -Werror -std=c++98
 
