@@ -13,7 +13,7 @@ static bool isChar(const std::string& literal) {
 static bool isInt(const std::string& literal) {
     if (literal.empty())
         return false;
-    // Check for leading whitespace
+
     if (std::isspace(literal[0]))
         return false;
     char* end;
@@ -26,7 +26,7 @@ static bool isInt(const std::string& literal) {
 static bool isFloat(const std::string& literal) {
     if (literal.empty())
         return false;
-    // Check for leading whitespace
+
     if (std::isspace(literal[0]))
         return false;
     if (literal == "-inff" || literal == "+inff" || literal == "nanf")
@@ -42,7 +42,7 @@ static bool isFloat(const std::string& literal) {
 static bool isDouble(const std::string& literal) {
     if (literal.empty())
         return false;
-    // Check for leading whitespace
+
     if (std::isspace(literal[0]))
         return false;
     if (literal == "-inf" || literal == "+inf" || literal == "nan")
@@ -96,7 +96,7 @@ void ScalarConverter::convert(const std::string& literal) {
     if (isChar(literal)) {
         value = static_cast<double>(literal[0]);
     } else if (isInt(literal)) {
-        value = std::atoi(literal.c_str());
+        value = std::strtod(literal.c_str(), NULL);
     } else if (isFloat(literal)) {
         if (literal == "-inff" || literal == "+inff" || literal == "nanf")
             value = std::strtod(literal.c_str(), NULL);
@@ -105,10 +105,7 @@ void ScalarConverter::convert(const std::string& literal) {
     } else if (isDouble(literal)) {
         value = std::strtod(literal.c_str(), NULL);
     } else {
-        std::cout << "char: impossible" << std::endl;
-        std::cout << "int: impossible" << std::endl;
-        std::cout << "float: impossible" << std::endl;
-        std::cout << "double: impossible" << std::endl;
+		std::cerr << "arg is not <char>, <int>, <float>, <double>" << std::endl;
         return;
     }
 

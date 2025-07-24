@@ -3,9 +3,10 @@
 
 #include <string>
 
-struct Data {
-    std::string name;
-    int value;
-};
+    struct Data
+    {
+        std::string name;
+        int value;
+    };
 
 #endif
